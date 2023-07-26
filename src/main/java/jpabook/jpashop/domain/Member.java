@@ -20,6 +20,6 @@ public class Member {
     @Embedded
     private Address address;
 
-    @OneToMany(mappedBy = "member") //Order 테이블에 있는 member에 의해 매핑됐다라는 의미
+    @OneToMany(mappedBy = "member", fetch = FetchType.LAZY) //Order 테이블에 있는 member에 의해 매핑됐다라는 의미
     private List<Order> orders = new ArrayList<>();
 }
